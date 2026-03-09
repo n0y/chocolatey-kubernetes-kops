@@ -3,7 +3,7 @@ $KopsVersion = $Props.UPSTREAM_VERSION
 "Building Upstream Version: $KopsVersion"
 ""
 
-$Checksum = (Invoke-WebRequest "https://github.com/kubernetes/kops/releases/download/v$KopsVersion/kops-windows-amd64.sha256").tostring().trim().ToUpper()
+$Checksum = (Invoke-WebRequest -UseBasicParsing "https://github.com/kubernetes/kops/releases/download/v$KopsVersion/kops-windows-amd64.sha256").tostring().trim().ToUpper()
 
 "Discovered Checksum: $Checksum"
 
